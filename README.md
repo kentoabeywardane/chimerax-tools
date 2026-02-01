@@ -5,8 +5,12 @@
 ├── animate
 │   └── shepherd_traj.py
 ├── LICENSE
+├── TIPS.md
 └── README.md
 ```
+
+## [`TIPS.md`](TIPS.md)
+Look at TIPS.md for quick copy-and-paste commands for ChimeraX
 
 ## Animation
 
