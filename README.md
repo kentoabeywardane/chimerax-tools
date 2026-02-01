@@ -17,7 +17,8 @@ Look at TIPS.md for quick copy-and-paste commands for ChimeraX
 ### ShEPhERD trajectories: `animate/shepherd_traj.py`
 This script loads a ShEPhERD trajectory and creates an `mseries` slider to animate x1, x3, and x4 together. It is impossible to natively use `mseries` to bundle multiple objects and animate them together without the help of this script.
 
-[!NOTE] This ChimeraX script currently only handles trajectories that include x1, x3, *and* x4 files to animate (e.g., cannot handle trajectories with just x1 and x4).
+> [!NOTE]
+> This ChimeraX script currently only handles trajectories that include x1, x3, *and* x4 files to animate (e.g., cannot handle trajectories with just x1 and x4).
 
 1. Generate ShEPhERD sample and save trajectory:
 ```python
