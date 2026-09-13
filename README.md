@@ -17,8 +17,8 @@ Look at TIPS.md for quick copy-and-paste commands for ChimeraX
 ### ShEPhERD trajectories: `animate/shepherd_traj.py`
 This script loads a ShEPhERD trajectory and creates an `mseries` slider to animate x1, x3, and x4 together. It is impossible to natively use `mseries` to bundle multiple objects and animate them together without the help of this script.
 
-> [!NOTE]
-> This ChimeraX script currently only handles trajectories that include x1, x3, *and* x4 files to animate (e.g., cannot handle trajectories with just x1 and x4).
+By default, the script expects x1, x3, and x4 files. Use `--x1-only` to
+construct a trajectory containing only the x1 atoms.
 
 1. Generate ShEPhERD sample and save trajectory:
 ```python
@@ -72,4 +72,22 @@ runscript <path/to/repo>/animate/shepherd_traj.py <dir>
 ```
 Optionally use the --nframes flag to choose the number of frames. Default is 400.
 
+To load only the x1 atom trajectory, the directory needs only the
+`XXX_frame_x1.xyz` files:
+```
+runscript <path/to/repo>/animate/shepherd_traj.py <dir> --x1-only
+```
+
 This will load all the frames in the trajectory file.
+
+All frames are grouped under a single top-level model in the Models panel, with
+one subgroup per track, so the whole trajectory can be hidden or shown with a
+single checkbox:
+```
+#1    ShEPhERD trajectory (<dir>)
+├── #1.1  x1 (atoms)
+│   ├── #1.1.1  Frame 0
+│   └── ...
+├── #1.2  x3 (ESP)
+└── #1.3  x4 (pharmacophores)
+```
